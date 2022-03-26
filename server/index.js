@@ -20,11 +20,11 @@ app.get('/', (req, res) => {
 
 
 app.get('/api/cows', (req, res) => {
-  db.getCows((err, success) => {
+  db.getCows((err, results) => {
     if (err) {
-      res.staus(500).send(err);
+      res.status(500).send(err);
     } else {
-      res.status(200).send(success);
+      res.status(200).send(results);
     }
   });
 })
