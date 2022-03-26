@@ -15,4 +15,6 @@ CREATE TABLE cows_table (
 );
 
 INSERT INTO cows_table VALUES (null, 'Bessy', 'A chonker of a cow');
--- mysql -u root < database/schema.sql
+INSERT INTO cows_table VALUES (null, 'Chocolate', 'Speciality flavor cow');
+
+-- mysql -u root < schema.sql
