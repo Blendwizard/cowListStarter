@@ -6,7 +6,7 @@ var CowList = (props) => {
       <h2>Cow Roster</h2>
       <ul>
         {props.cows.map((cow) => {
-          return <CowListItem key={cow.id} cow={cow}/>
+          return <CowListItem key={cow.id} cow={cow} clickedOnCow={props.clickedOnCow}/>
         })}
       </ul>
     </div>

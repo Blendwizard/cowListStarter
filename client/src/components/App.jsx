@@ -1,6 +1,7 @@
 import React from 'react';
 import CowList from './CowList.jsx';
 import AddCow from './AddCow.jsx';
+import CowDetails from './CowDetails.jsx'
 
 
 
@@ -8,7 +9,8 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      cows: []
+      cows: [],
+      clickedCow: ''
     };
     this.url = 'http://localhost:3000/';
   }
@@ -42,12 +44,20 @@ class App extends React.Component {
   }
 
 
+  clickedOnCow(cow) {
+    console.log("Clicked on cow", cow)
+    this.setState({clickedCow: cow});
+  }
+
+
+
   render() {
     return (
       <div>
         <h1>Cow List</h1>
         <AddCow addCow={this.addCow.bind(this)}/>
-        <CowList cows={this.state.cows} />
+        <CowDetails clickedCow={this.state.clickedCow} cows={this.state.cows}/>
+        <CowList cows={this.state.cows} clickedOnCow={this.clickedOnCow.bind(this)}/>
       </div>
     )
   }
